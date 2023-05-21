@@ -1,6 +1,10 @@
-# vim-symlink [![GitHub Actions](https://github.com/aymericbeaumet/vim-symlink/actions/workflows/ci.yml/badge.svg)](https://github.com/aymericbeaumet/vim-symlink/actions/workflows/ci.yml)
+# vim-symlink
 
-[vim-symlink](https://github.com/aymericbeaumet/vim-symlink) enables to
+## Note:
+Although this plugin was inspired by [aymericbeaumet/vim-symlink](https://github.com/aymericbeaumet/vim-symlink/actions/workflows/ci.yml),
+it is almost completely re-written.
+
+[vim-symlink](https://github.com/jasha10/vim-symlink) enables to
 automatically follow the symlinks in Vim or Neovim. This means that when you
 edit a pathname that is a symlink, vim will instead open the file using the
 resolved target path.
@@ -11,7 +15,7 @@ resolved target path.
 
 - Cross-platform
 - Recursive symlinks resolution
-- [`vimdiff`](http://vimdoc.sourceforge.net/htmldoc/diff.html) support
+- [`vimdiff`](http://vimdoc.sourceforge.net/htmldoc/diff.html) support (still after rewrite?)
 - Allow to create new files in symlinked directories
 - Make [vim-fugitive](https://github.com/tpope/vim-fugitive) behave properly
   with linked files
@@ -21,26 +25,20 @@ resolved target path.
 Install with [packer](https://github.com/wbthomason/packer.nvim):
 
 ```lua
-use { 'aymericbeaumet/vim-symlink', requires = { 'moll/vim-bbye' } }
+use { 'jasha10/vim-symlink', branch = 'jasha-dev' }
 ```
 
 Install with [lazy.nvim](https://github.com/folke/lazy.nvim):
 
 ```lua
-{ "aymericbeaumet/vim-symlink", dependencies = { "moll/vim-bbye" } }
+{ "jasha10/vim-symlink", branch = 'jasha-dev' }
 ```
 
 Install with [vim-plug](https://github.com/junegunn/vim-plug):
 
 ```vim
-Plug 'aymericbeaumet/vim-symlink'
-Plug 'moll/vim-bbye' " optional dependency
+Plug 'jasha10/vim-symlink', { 'branch': 'jasha-dev' }
 ```
-
-_Note: [vim-bbye](https://github.com/moll/vim-bbye) allows to consistenly wipe
-buffers without impacting the windows order. Even though a fallback is present
-in vim-symlink (hence avoiding a required dependency), the vim-bbye
-implementation is more robust and I advise you to leverage it._
 
 ## Usage
 
